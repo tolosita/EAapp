@@ -26,6 +26,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavComponent } from './shared/nav/nav.component';
 import { SidenavComponent } from './shared/sidenav/sidenav.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { UsuariosComponent } from './dashboard/usuarios/usuarios.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { FooterComponent } from './shared/footer/footer.component';
     DashboardComponent,
     NavComponent,
     SidenavComponent,
-    FooterComponent
+    FooterComponent,
+    UsuariosComponent
   ],
   imports: [
     BrowserModule,

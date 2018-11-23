@@ -6,8 +6,9 @@
       <a><span class="white-text email">jdandturk@gmail.com</span></a>
     </div>
   </li>
-  <li><a class="waves-effect"><i class="material-icons">home</i>Inicio</a></li>
-  <li><a class="waves-effect"><i class="material-icons">people</i>Usuarios</a></li>
+  <li *ngFor="let ruta of rutas"><a class="waves-effect" [routerLink]="ruta.path" (click)="setRuta(ruta.title)">
+      <i class="material-icons">{{ ruta.icon }}</i>{{ ruta.name }}</a>
+  </li>
   <li>
     <div class="divider"></div>
   </li>
