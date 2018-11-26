@@ -2,8 +2,8 @@
   <li>
     <div class="user-view">
       <div class="background teal"></div>
-      <a><span class="white-text name">John Doe</span></a>
-      <a><span class="white-text email">jdandturk@gmail.com</span></a>
+      <a><span class="white-text name">{{ user.nombre }}</span></a>
+      <a><span class="white-text email">{{ user.email }}</span></a>
     </div>
   </li>
   <li *ngFor="let ruta of rutas"><a class="waves-effect" [routerLink]="ruta.path" (click)="setRuta(ruta.title)">

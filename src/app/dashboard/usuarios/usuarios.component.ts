@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+declare var M: any;
 
 @Component({
   selector: 'app-usuarios',
@@ -10,6 +11,7 @@ export class UsuariosComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    M.Tooltip.init(document.querySelectorAll('.tooltipped'));
   }
 
 }

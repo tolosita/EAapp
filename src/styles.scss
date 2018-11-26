@@ -2,8 +2,7 @@
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
 header,
-main,
-footer {
+main {
   padding-left: 300px;
 }
 
@@ -24,8 +23,7 @@ main {
 
 @media only screen and (max-width: 992px) {
   header,
-  main,
-  footer {
+  main {
     padding-left: 0;
   }
 }
