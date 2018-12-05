@@ -1,5 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-declare var M: any;
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -8,12 +7,10 @@ declare var M: any;
 })
 export class HomeComponent implements OnInit {
 
-  @ViewChild('carousel') sidnavRef: ElementRef;
-
   constructor() { }
 
   ngOnInit() {
-    M.Carousel.init(this.sidnavRef.nativeElement, { fullWidth: true, indicators: true });
+
   }
 
 }

@@ -1,27 +1,30 @@
-<div class="section">
-  <div class="row">
-    <div class="col s6 offset-s3">
-      <div class="card-panel grey lighten-5">
-
-        <h5 class="center-align">
-          login
-        </h5>
-        <div class="row">
-          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="col s10 offset-s1">
-            <div class="row">
-              <div class="input-field col s12">
-                <input id="email" type="email" class="validate" formControlName="email" name="email">
-                <label for="email">Email</label>
-              </div>
-              <div class="input-field col s12">
-                <input id="password" type="password" class="validate" formControlName="password" name="password">
-                <label for="password">Password</label>
-              </div>
-            </div>
-            <button type="submit" class="waves-effect waves-light btn black"><i class="material-icons right">send</i>Ingresar</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<mat-grid-list cols="1" rowHeight="fit" style="height: 500px">
+  <mat-grid-tile colspan="1" rowspan="1">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>
+            Iniciar Sesión
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <p>
+            <mat-form-field>
+              <input matInput placeholder="Correo" formControlName="email">
+              <mat-error *ngIf="email.invalid">{{getErrorMessage(email)}}</mat-error>
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field>
+              <input matInput placeholder="Clave" formControlName="password">
+              <mat-error *ngIf="password.invalid">{{getErrorMessage(password)}}</mat-error>
+            </mat-form-field>
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button type="submit" mat-flat-button color="primary">Ingresar <mat-icon>send</mat-icon></button>
+        </mat-card-actions>
+      </mat-card>
+    </form>
+  </mat-grid-tile>
+</mat-grid-list>

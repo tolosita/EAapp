@@ -6,7 +6,6 @@ import { SetPage } from '../../../store/Actions/nav.actions';
 import { Router } from '@angular/router';
 import { User } from '../../../models/user.model';
 import { Subscription } from 'rxjs';
-declare var M: any;
 
 const routes: any[] = [
   { path: '/', name: 'Inicio', icon: 'home', title: 'Inicio' },
@@ -20,7 +19,6 @@ const routes: any[] = [
 })
 export class SidenavComponent implements OnInit, OnDestroy {
 
-  @ViewChild('sidenav') sidnavRef: ElementRef;
   rutas: any[] = routes;
   subscription: Subscription;
   user: User = new User();
@@ -34,7 +32,6 @@ export class SidenavComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.subscription = this.store.select('auth').subscribe(auth => this.user = new User()/* auth.user */);
     this.setRuta(routes.find(route => route.path === this.router.url).title);
-    M.Sidenav.init(this.sidnavRef.nativeElement);
   }
 
   ngOnDestroy() {

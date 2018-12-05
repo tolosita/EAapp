@@ -17,10 +17,16 @@ export class LoginComponent {
   constructor(private fb: FormBuilder, private authService: AuthService) { }
 
   onSubmit() {
-    if (this.loginForm.invalid) {
-      return;
-    }
-
+    if (this.loginForm.invalid) { return; };
     this.authService.login(this.loginForm.value);
   }
+
+  getErrorMessage(input) {
+    return input.hasError('required') ? 'Debes introducir un valor' :
+      input.hasError('email') ? 'No es un correo electrónico válido' :
+        '';
+  }
+
+  get email() { return this.loginForm.get('email'); }
+  get password() { return this.loginForm.get('password'); }
 }
