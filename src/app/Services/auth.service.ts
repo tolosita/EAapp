@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 import { User } from '../Models/user.model';
-import { LoginUser, LogoutUser } from '../store/Actions/auth.actions';
+import { LoginUser, LogoutUser, LoggedUser, LoginUserError } from '../store/Actions/auth.actions';
 import { Store } from '@ngrx/store';
 import { AppState } from '../Store/app.reducer';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AppService } from '../app.service';
 import { Constants } from '../app.constants';
-import { AlertService } from './alert.service';
 
 @Injectable({
   providedIn: 'root'
@@ -19,25 +18,32 @@ export class AuthService {
   constructor(
     private router: Router,
     private store: Store<AppState>,
-    private appService: AppService,
-    private alertService: AlertService
+    private appService: AppService
   ) { }
 
   initAuthListener() {
     this.subscription = this.store.select('auth')
-      .subscribe(aut => {
-        this.logged = aut.user;
+      .subscribe(auth => {
+        this.logged = auth.user;
       });
   }
 
   login(user: User) {
-    this.appService.postRequest(Constants.PATH_USUARIOS, user)
+    this.store.dispatch(new LoginUser());
+    this.appService.postRequest(Constants.PATH_LOGIN, user)
       .then(response => {
-        this.store.dispatch(new LoginUser(user));
-        this.router.navigate(['/']);
+        if (response) {
+          this.store.dispatch(new LoggedUser(<User>response));
+          this.router.navigate(['/']);
+        } else {
+          this.store.dispatch(new LoginUserError({
+            status: '404',
+            message: 'Usuario no encontrado'
+          }));
+        }
       })
       .catch(error => {
-        this.alertService.openDialog(error.error);
+        console.log(error);
       });
   }
 

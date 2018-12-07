@@ -25,6 +25,7 @@ import { SidenavComponent } from './components/shared/sidenav/sidenav.component'
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { UsuariosComponent } from './components/dashboard/usuarios/usuarios.component';
 import { MessagesComponent } from './components/shared/dialog/messages/messages.component';
+import { LoaderComponent } from './components/shared/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { MessagesComponent } from './components/shared/dialog/messages/messages.
     SidenavComponent,
     FooterComponent,
     UsuariosComponent,
-    MessagesComponent
+    MessagesComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
