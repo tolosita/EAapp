@@ -31,19 +31,13 @@ export class AuthService {
   login(user: User) {
     this.store.dispatch(new LoginUser());
     this.appService.postRequest(Constants.PATH_LOGIN, user)
-      .then(response => {
-        if (response) {
-          this.store.dispatch(new LoggedUser(<User>response));
-          this.router.navigate(['/']);
-        } else {
-          this.store.dispatch(new LoginUserError({
-            status: '404',
-            message: 'Usuario no encontrado'
-          }));
-        }
+      .then((response: User) => {
+        this.store.dispatch(new LoggedUser(response));
+        this.router.navigate(['/']);
       })
       .catch(error => {
         console.log(error);
+        this.store.dispatch(new LoginUserError(error.error.mensaje));
       });
   }
 

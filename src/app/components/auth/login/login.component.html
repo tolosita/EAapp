@@ -1,31 +1,35 @@
 <div *ngIf="cargando" class="loader">
   <mat-progress-bar mode="query"></mat-progress-bar>
 </div>
-<mat-grid-list cols="1" rowHeight="fit" style="height: 100vh">
+<mat-grid-list cols="1" rowHeight="fit" class="background-login">
   <mat-grid-tile colspan="1" rowspan="1">
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-      <mat-card>
+      <mat-card class="content-form-login">
         <mat-card-header>
           <mat-card-title>
             Iniciar Sesión
           </mat-card-title>
         </mat-card-header>
-        <mat-card-content class="dashboard-card-content">
+        <mat-card-subtitle *ngIf="error" class="error-text-login">
+          {{ error }}
+        </mat-card-subtitle>
+        <mat-card-content class="content-input-login">
           <p>
             <mat-form-field>
-              <input matInput placeholder="Correo" formControlName="email">
+              <input matInput placeholder="Email" formControlName="email">
               <mat-error *ngIf="email.invalid">{{getErrorMessage(email)}}</mat-error>
             </mat-form-field>
           </p>
           <p>
             <mat-form-field>
-              <input matInput placeholder="Clave" formControlName="clave">
+              <input matInput placeholder="Contraseña" formControlName="clave">
               <mat-error *ngIf="clave.invalid">{{getErrorMessage(clave)}}</mat-error>
             </mat-form-field>
           </p>
+          <mat-checkbox formControlName="recordar">Recordar contraseña</mat-checkbox>
         </mat-card-content>
         <mat-card-actions>
-          <button type="submit" mat-flat-button color="primary" [disabled]="cargando">Ingresar <mat-icon>send</mat-icon></button>
+          <button type="submit" mat-flat-button color="primary" class="button-login-accept" [disabled]="cargando">Ingresar</button>
         </mat-card-actions>
       </mat-card>
     </form>

@@ -6,7 +6,7 @@ import { User } from '../../models/user.model';
 export interface AuthState {
     user: User;
     isLoading: boolean;
-    error: any;
+    error: string;
 }
 
 const stateInit: AuthState = {

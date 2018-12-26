@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, Validators, FormControl } from '@angular/forms';
 import { AuthService } from '../../../services/auth.service';
 import { Subscription } from 'rxjs';
 import { Store } from '@ngrx/store';
@@ -8,7 +8,7 @@ import { AppState } from '../../../store/app.reducer';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styles: [],
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit, OnDestroy {
   cargando: boolean;
@@ -16,7 +16,8 @@ export class LoginComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   loginForm = this.fb.group({
     email: [null, [Validators.required, Validators.email]],
-    clave: [null, Validators.required]
+    clave: [null, Validators.required],
+    recordar: [false]
   });
 
   constructor(
@@ -38,10 +39,11 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   onSubmit() {
     if (this.loginForm.invalid) { return; }
+    delete this.loginForm.value.recordar;
     this.authService.login(this.loginForm.value);
   }
 
-  getErrorMessage(input) {
+  getErrorMessage(input: FormControl) {
     return input.hasError('required') ? 'Debes introducir un valor' :
       input.hasError('email') ? 'No es un correo electrónico válido' :
         '';

@@ -19,7 +19,7 @@ export class LoggedUser implements Action {
 
 export class LoginUserError implements Action {
     readonly type = AuthActionTypes.LoginUserError;
-    constructor(public error: any) { }
+    constructor(public error: string) { }
 }
 
 export class LogoutUser implements Action {

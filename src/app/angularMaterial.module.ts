@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
     MatGridListModule, MatListModule, MatCardModule, MatMenuModule,
-    MatIconModule, MatButtonModule, MatInputModule, MatFormFieldModule,
+    MatIconModule, MatButtonModule, MatInputModule, MatFormFieldModule, MatCheckboxModule,
     MatDialogModule, MatProgressBarModule
 } from '@angular/material';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -20,6 +20,7 @@ import { MessagesComponent } from './components/shared/dialog/messages/messages.
         MatButtonModule,
         MatInputModule,
         MatFormFieldModule,
+        MatCheckboxModule,
         MatDialogModule,
         MatProgressBarModule,
         LayoutModule
@@ -34,6 +35,7 @@ import { MessagesComponent } from './components/shared/dialog/messages/messages.
         MatButtonModule,
         MatInputModule,
         MatFormFieldModule,
+        MatCheckboxModule,
         MatDialogModule,
         MatProgressBarModule,
         LayoutModule

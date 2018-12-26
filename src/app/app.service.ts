@@ -4,8 +4,7 @@ import { Constants } from './app.constants';
 
 const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type': 'application/json',
-    'Authorization': 'Basic ' + btoa('user:secret123')
+    'Content-Type': 'application/json'
   })
 };
 
@@ -42,7 +41,7 @@ export class AppService {
           },
           error => {
             reject(error);
-          },
+          }
         );
     });
     return promise;

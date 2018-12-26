@@ -1,0 +1,24 @@
+.background-login {
+  height: 100vh;
+  background-color: #fafafa;
+}
+
+.content-form-login {
+  padding: 40px;
+}
+
+.content-input-login {
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.button-login-accept {
+  width: 100%;
+  text-transform: uppercase;
+}
+
+.error-text-login {
+  text-align: center;
+  margin-bottom: 20px;
+  color: rgba(255, 0, 0, 0.6);
+}
