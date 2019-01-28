@@ -2,7 +2,10 @@
     <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="sidenav.toggle()" *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
     </button>
-    <span>{{ title }}</span>
+    <label class="logo">ea</label>
+    <div class="title">
+        {{ title }}
+    </div>
 </mat-toolbar>
 
 <mat-sidenav-container class="sidenav-container">
@@ -13,7 +16,7 @@
                 <mat-icon matListIcon>{{ ruta.icon }}</mat-icon>
                 <p>{{ ruta.name }}</p>
             </a>
-            <a mat-list-item (click)="logout()">
+            <a mat-list-item (click)="logout()" class="btn-logout">
                 <mat-icon matListIcon>exit_to_app</mat-icon>
                 <p>Cerrar Sesión</p>
             </a>

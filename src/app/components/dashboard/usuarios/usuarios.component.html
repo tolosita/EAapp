@@ -1,35 +1,52 @@
-<div class="section">
-  <div class="row">
-    <div class="col s10 offset-s1">
-      <table class="highlight">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Apellido</th>
-            <th scope="col">Fecha de Nacimiento</th>
-            <th scope="col">Dirección</th>
-            <th scope="col">Email</th>
-            <th scope="col">Cargo</th>
-            <th scope="col">Acción</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Alvin</td>
-            <td>Eclair</td>
-            <td>hoy</td>
-            <td>ninguno</td>
-            <td>porai</td>
-            <td>todos</td>
-            <td>
-              <a class="tooltipped" data-position="right" data-tooltip="Editar"><i class="material-icons teal-text">edit</i></a>
-              <a class="tooltipped" data-position="right" data-tooltip="Eliminar"><i class="material-icons black-text">delete</i></a>
-            </td>
-          </tr>
-        </tbody>
+<section>
+  <mat-card>
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    </mat-form-field>
+
+    <div>
+      <table mat-table [dataSource]="dataSource" matSort>
+
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> # </th>
+          <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="nombre">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
+          <td mat-cell *matCellDef="let row"> {{row.nombre}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="apellido">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Apellido </th>
+          <td mat-cell *matCellDef="let row"> {{row.apellido}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="fecha">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha de Nacimiento </th>
+          <td mat-cell *matCellDef="let row"> {{row.fecha}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="direccion">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Dirección </th>
+          <td mat-cell *matCellDef="let row"> {{row.direccion}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+          <td mat-cell *matCellDef="let row"> {{row.email}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="cargo">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Cargo </th>
+          <td mat-cell *matCellDef="let row"> {{row.cargo}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"> </tr>
       </table>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 25]"></mat-paginator>
     </div>
-  </div>
-</div>
+  </mat-card>
+</section>
