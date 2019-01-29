@@ -1,52 +1,58 @@
+<mat-toolbar>
+  <mat-form-field appearance="outline" class="input-filtro" floatLabel="never">
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Buscar">
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+</mat-toolbar>
 <section>
-  <mat-card>
-    <mat-form-field>
-      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
-    </mat-form-field>
+  <mat-card class="container-table">
+    <table mat-table [dataSource]="dataSource" matSort>
 
-    <div>
-      <table mat-table [dataSource]="dataSource" matSort>
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> No. </th>
+        <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+      </ng-container>
 
-        <ng-container matColumnDef="id">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> # </th>
-          <td mat-cell *matCellDef="let row"> {{row.id}} </td>
-        </ng-container>
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
+        <td mat-cell *matCellDef="let row"> {{row.nombre}} </td>
+      </ng-container>
 
-        <ng-container matColumnDef="nombre">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
-          <td mat-cell *matCellDef="let row"> {{row.nombre}} </td>
-        </ng-container>
+      <ng-container matColumnDef="apellidos">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Apellido </th>
+        <td mat-cell *matCellDef="let row"> {{row.apellidos}} </td>
+      </ng-container>
 
-        <ng-container matColumnDef="apellido">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Apellido </th>
-          <td mat-cell *matCellDef="let row"> {{row.apellido}} </td>
-        </ng-container>
+      <ng-container matColumnDef="fechaNacimiento">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha de Nacimiento </th>
+        <td mat-cell *matCellDef="let row"> {{row.fechaNacimiento | date}} </td>
+      </ng-container>
 
-        <ng-container matColumnDef="fecha">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha de Nacimiento </th>
-          <td mat-cell *matCellDef="let row"> {{row.fecha}} </td>
-        </ng-container>
+      <ng-container matColumnDef="direccion">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Dirección </th>
+        <td mat-cell *matCellDef="let row"> {{row.direccion}} </td>
+      </ng-container>
 
-        <ng-container matColumnDef="direccion">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Dirección </th>
-          <td mat-cell *matCellDef="let row"> {{row.direccion}} </td>
-        </ng-container>
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+        <td mat-cell *matCellDef="let row"> {{row.email}} </td>
+      </ng-container>
 
-        <ng-container matColumnDef="email">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
-          <td mat-cell *matCellDef="let row"> {{row.email}} </td>
-        </ng-container>
+      <ng-container matColumnDef="role">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Cargo </th>
+        <td mat-cell *matCellDef="let row"> {{row.role.nombre | slice:5}} </td>
+      </ng-container>
 
-        <ng-container matColumnDef="cargo">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Cargo </th>
-          <td mat-cell *matCellDef="let row"> {{row.cargo}} </td>
-        </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
 
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"> </tr>
-      </table>
-
-      <mat-paginator [pageSizeOptions]="[5, 10, 25]"></mat-paginator>
-    </div>
+    <mat-paginator [pageSizeOptions]="[5, 10, 25]"></mat-paginator>
   </mat-card>
+
+  <div class="btn-add">
+    <button mat-fab>
+      <mat-icon aria-label="Crear">add</mat-icon>
+    </button>
+  </div>
 </section>

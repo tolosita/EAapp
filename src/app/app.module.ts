@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
+import { NgModule, LOCALE_ID } from '@angular/core';
 // Modulos
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -28,6 +27,10 @@ import { MessagesComponent } from './components/shared/dialog/messages/messages.
 import { LoaderComponent } from './components/shared/loader/loader.component';
 
 import { TokenInterceptor } from './app.interceptor';
+import es from '@angular/common/locales/es';
+import { registerLocaleData } from '@angular/common';
+
+registerLocaleData(es);
 
 @NgModule({
   declarations: [
@@ -57,7 +60,8 @@ import { TokenInterceptor } from './app.interceptor';
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
-    { provide: 'LOCALSTORAGE', useFactory: getLocalStorage }
+    { provide: 'LOCALSTORAGE', useFactory: getLocalStorage },
+    { provide: LOCALE_ID, useValue: 'es-CO' }
   ],
   bootstrap: [AppComponent]
 })

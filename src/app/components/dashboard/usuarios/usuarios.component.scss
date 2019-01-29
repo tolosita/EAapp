@@ -2,7 +2,22 @@ table {
   width: 100%;
 }
 
+.container-table {
+  max-height: 400px;
+  overflow: auto;
+}
+
 .mat-form-field {
   font-size: 14px;
   width: 100%;
+}
+
+::ng-deep .input-filtro .mat-form-field-wrapper {
+  padding-bottom: 0;
+}
+
+.btn-add {
+  right: 10px;
+  bottom: 10px;
+  position: absolute;
 }
