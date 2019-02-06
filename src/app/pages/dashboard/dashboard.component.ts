@@ -4,8 +4,8 @@ import { Store } from '@ngrx/store';
 import { AppState } from '../../store/app.store';
 import { Subscription, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { AuthService } from '../../services/auth.service';
 import { User } from '../../models/user.model';
+import { LogoutUser } from '../../store/Actions/auth.actions';
 
 const routes: any[] = [
   { path: '/', name: 'Inicio', icon: 'home' },
@@ -20,14 +20,13 @@ const routes: any[] = [
 export class DashboardComponent implements OnInit, OnDestroy {
 
   rutas: any[] = routes;
-  user: User = new User();
+  user: User;
   subscriptionAuth: Subscription;
   isHandset$: Observable<boolean>;
 
   constructor(
     private breakpointObserver: BreakpointObserver,
-    private store: Store<AppState>,
-    private authService: AuthService
+    private store: Store<AppState>
   ) { }
 
   ngOnInit(): void {
@@ -40,7 +39,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   logout() {
-    this.authService.logout();
+    this.store.dispatch(new LogoutUser());
   }
 
 }

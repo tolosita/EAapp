@@ -1,13 +1,12 @@
 import { Action } from '@ngrx/store';
 
 export enum AlertActionTypes {
-    setError = '[Alert] SET_ERROR'
+    throwError = '[Alert] THROW_ERROR'
 }
 
-export class SetError implements Action {
-    readonly type = AlertActionTypes.setError;
-    constructor(public message: string, public tipo: tipoAlert) { }
+export class ThrowError implements Action {
+    readonly type = AlertActionTypes.throwError;
+    constructor(public payload: any) { }
 }
 
-export type actions = SetError;
-export type tipoAlert = 'info';
+export type actions = ThrowError;

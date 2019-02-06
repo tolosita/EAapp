@@ -41,10 +41,9 @@ export class UsuarioComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.userForm.value);
     if (this.userForm.invalid) { return; }
+    this.userForm.value.fechaNacimiento += 'T00:00:00.000+0000';
     this.store.dispatch(new SaveUser(this.userForm.value));
-    this.dialogRef.close();
   }
 
   getErrorMessage(input: FormControl) {
