@@ -7,6 +7,7 @@ import { AuthGuardService } from './services/auth-guard.service';
 import { HomeComponent } from './pages/dashboard/home/home.component';
 import { UsuariosComponent } from './pages/dashboard/usuarios/usuarios.component';
 import { GarantiasComponent } from './pages/dashboard/garantias/garantias.component';
+import { ClientesComponent } from './pages/dashboard/clientes/clientes.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
     children: [
       { path: 'dashboard', component: HomeComponent },
       { path: 'usuarios', component: UsuariosComponent },
+      { path: 'clientes', component: ClientesComponent },
       { path: 'garantias', component: GarantiasComponent },
       { path: '**', redirectTo: '/dashboard' }
     ],

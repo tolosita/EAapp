@@ -28,7 +28,7 @@ import { UsuarioComponent } from './pages/shared/dialog/usuario/usuario.componen
 import { ConfirmComponent } from './pages/shared/dialog/confirm/confirm.component';
 import { LoaderComponent } from './pages/shared/loader/loader.component';
 import { GarantiasComponent } from './pages/dashboard/garantias/garantias.component';
-import { ClientesComponent } from './pages/dashboard/garantias/clientes/clientes.component';
+import { ClientesComponent } from './pages/dashboard/clientes/clientes.component';
 
 import { TokenInterceptor } from './app.interceptor';
 import es from '@angular/common/locales/es';

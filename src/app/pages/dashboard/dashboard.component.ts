@@ -10,6 +10,7 @@ import { LogoutUser } from '../../store/Actions/auth.actions';
 const routes: any[] = [
   { path: '/dashboard', name: 'Inicio', icon: 'home' },
   { path: '/usuarios', name: 'Usuarios', icon: 'people', },
+  { path: '/clientes', name: 'Clientes', icon: 'face', },
   { path: '/garantias', name: 'Garantias', icon: 'assignment', }
 ];
 
