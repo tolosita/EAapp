@@ -5,6 +5,7 @@ export class Constants {
     public static PATH_LOGIN = 'login';
     public static PATH_RECUPERAR = 'recuperar';
     public static PATH_CARGOS = 'roles';
+    public static PATH_TIPO_DOCUMENTOS = 'tipoDocumentos';
     public static IMAGES = 'assets/images';
 
     public static 0 = 'Servidor Inaccesible';
@@ -12,9 +13,9 @@ export class Constants {
     public static 402 = 'Email o Contraseña inválida';
     public static 403 = 'Su sesión ha expirado';
 
-    public static CREATE_USER_SUCCES = 'Se guardo el usuario correctamente';
-    public static UPDATE_USER_SUCCES = 'Se actualizo el usuario correctamente';
-    public static DELETE_USER_SUCCES = 'Se elimino el usuario correctamente';
+    public static CREATE_SUCCES = 'Se guardo el registro correctamente';
+    public static UPDATE_SUCCES = 'Se actualizo el registro correctamente';
+    public static DELETE_SUCCES = 'Se elimino el registro correctamente';
     public static SEND_MAIL_SUCCES = 'Se envio un correo de recuperacion a su cuenta';
     public static BTN_OK = 'Entendido';
 }

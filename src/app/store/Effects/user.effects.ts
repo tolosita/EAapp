@@ -83,7 +83,7 @@ export class UserEffects {
                 .pipe(
                     map((response) => {
                         this.dialogRef.close();
-                        this.snackBar.open(Constants.CREATE_USER_SUCCES, Constants.BTN_OK, { duration: 3000 });
+                        this.snackBar.open(Constants.CREATE_SUCCES, Constants.BTN_OK, { duration: 3000 });
                         return new userActions.LoadUsers();
                     }),
                     catchError((reject) => {
@@ -103,7 +103,7 @@ export class UserEffects {
                 .pipe(
                     map((response) => {
                         this.dialogRef.close();
-                        this.snackBar.open(Constants.UPDATE_USER_SUCCES, Constants.BTN_OK, { duration: 3000 });
+                        this.snackBar.open(Constants.UPDATE_SUCCES, Constants.BTN_OK, { duration: 3000 });
                         return new userActions.LoadUsers();
                     }),
                     catchError((reject) => {
@@ -123,7 +123,7 @@ export class UserEffects {
                 .pipe(
                     map((response) => {
                         this.dialog.closeAll();
-                        this.snackBar.open(Constants.DELETE_USER_SUCCES, Constants.BTN_OK, { duration: 3000 });
+                        this.snackBar.open(Constants.DELETE_SUCCES, Constants.BTN_OK, { duration: 3000 });
                         return new userActions.LoadUsers();
                     }),
                     catchError((reject) => {

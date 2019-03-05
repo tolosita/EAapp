@@ -1,3 +1,86 @@
-<p>
-  cliente works!
-</p>
+<h1 mat-dialog-title> {{data ? 'Editar' : 'Crear'}} Cliente</h1>
+<form [formGroup]="clientForm" (ngSubmit)="onSubmit()" autocomplete="off">
+  <div mat-dialog-content>
+    <mat-grid-list cols="2" rowHeight="75px">
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-select placeholder="Tipo de Documento" formControlName="tipoDocumento">
+            <mat-option *ngFor="let tipoDoc of tipoDocumentos" [value]="tipoDoc.id">{{tipoDoc.codigo}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="tipoDocumento.invalid">{{getErrorMessage(tipoDocumento)}}</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>Nro. Documento</mat-label>
+          <input matInput formControlName="nroDocumento" type="number" required>
+          <mat-error *ngIf="nroDocumento.invalid">{{getErrorMessage(nroDocumento)}}</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>Nombre</mat-label>
+          <input matInput formControlName="nombre" required>
+          <mat-error *ngIf="nombre.invalid">{{getErrorMessage(nombre)}}</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>Apellidos</mat-label>
+          <input matInput formControlName="apellidos" required>
+          <mat-error *ngIf="apellidos.invalid">{{getErrorMessage(apellidos)}}</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="2">
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" type="email" required>
+          <mat-error *ngIf="email.invalid">{{getErrorMessage(email)}}</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>Telefono</mat-label>
+          <input matInput formControlName="telefono" type="tel" required>
+          <mat-error *ngIf="telefono.invalid">{{getErrorMessage(telefono)}}</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>Celular</mat-label>
+          <input matInput formControlName="celular" type="number">
+          <mat-error *ngIf="celular.invalid">{{getErrorMessage(celular)}}</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="2">
+        <mat-form-field appearance="outline">
+          <mat-label>Dirección</mat-label>
+          <input matInput formControlName="direccion" required>
+          <mat-error *ngIf="direccion.invalid">{{getErrorMessage(direccion)}}</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>Pais</mat-label>
+          <input matInput formControlName="pais" required>
+          <mat-error *ngIf="pais.invalid">{{getErrorMessage(pais)}}</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>Ciudad</mat-label>
+          <input matInput formControlName="ciudad">
+          <mat-error *ngIf="ciudad.invalid">{{getErrorMessage(ciudad)}}</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+  <mat-dialog-actions align="end">
+    <button mat-raised-button color="primary" aria-label="Guardar">
+      <mat-icon>save</mat-icon>
+      <span>Guardar</span>
+    </button>
+    <button mat-button mat-dialog-close>Cancelar</button>
+  </mat-dialog-actions>
+</form>

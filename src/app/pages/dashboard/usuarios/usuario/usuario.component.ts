@@ -2,7 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Role } from 'src/app/models/role.model';
-import { RolesService } from '../../../../services/roles.service';
+import { SharedService } from '../../../../services/shared.service';
 import { AppState } from 'src/app/store/app.store';
 import { Store } from '@ngrx/store';
 import { SaveUser, EditUser } from '../../../../store/Actions/user.actions';
@@ -34,14 +34,14 @@ export class UsuarioComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: boolean,
     public dialogRef: MatDialogRef<UsuarioComponent>,
     private fb: FormBuilder,
-    private rolesService: RolesService,
+    private sharedService: SharedService,
     private store: Store<AppState>
   ) {
     this.minDate.setFullYear(this.minDate.getFullYear() - 18);
   }
 
   ngOnInit() {
-    this.rolesService.getRoles().subscribe(roles => this.cargos = roles);
+    this.sharedService.getRoles().subscribe(roles => this.cargos = roles);
     this.store.select('users').subscribe(users => {
       this.user = users.user;
       this.error = users.error;

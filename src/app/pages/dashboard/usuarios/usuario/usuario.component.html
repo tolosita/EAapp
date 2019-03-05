@@ -1,7 +1,7 @@
 <h1 mat-dialog-title> {{data ? 'Editar' : 'Crear'}} Usuario</h1>
 <form [formGroup]="userForm" (ngSubmit)="onSubmit()" autocomplete="off">
   <div mat-dialog-content>
-    <mat-grid-list cols="2" rowHeight="3:1">
+    <mat-grid-list cols="2" rowHeight="80px">
       <mat-grid-tile>
         <mat-form-field appearance="outline">
           <mat-label>Nombre</mat-label>
