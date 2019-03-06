@@ -1,0 +1,7 @@
+.background-home {
+  background-image: url("../../../../assets/images/background_home.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(1px) contrast(80%);
+  height: calc(100vh - 64px);
+}

@@ -8,6 +8,7 @@ import { HomeComponent } from './pages/dashboard/home/home.component';
 import { UsuariosComponent } from './pages/dashboard/usuarios/usuarios.component';
 import { GarantiasComponent } from './pages/dashboard/garantias/garantias.component';
 import { ClientesComponent } from './pages/dashboard/clientes/clientes.component';
+import { GarantiaComponent } from './pages/dashboard/garantias/garantia/garantia.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -20,6 +21,7 @@ const routes: Routes = [
       { path: 'usuarios', component: UsuariosComponent },
       { path: 'clientes', component: ClientesComponent },
       { path: 'garantias', component: GarantiasComponent },
+      { path: 'garantia/:id', component: GarantiaComponent },
       { path: '**', redirectTo: '/dashboard' }
     ],
     canActivate: [AuthGuardService]

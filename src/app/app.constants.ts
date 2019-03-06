@@ -6,6 +6,7 @@ export class Constants {
     public static PATH_RECUPERAR = 'recuperar';
     public static PATH_CARGOS = 'roles';
     public static PATH_TIPO_DOCUMENTOS = 'tipoDocumentos';
+    public static PATH_GARANTIAS = 'garantias';
     public static IMAGES = 'assets/images';
 
     public static 0 = 'Servidor Inaccesible';

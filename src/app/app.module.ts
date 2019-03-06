@@ -30,6 +30,7 @@ import { LoaderComponent } from './pages/shared/loader/loader.component';
 import { GarantiasComponent } from './pages/dashboard/garantias/garantias.component';
 import { ClientesComponent } from './pages/dashboard/clientes/clientes.component';
 import { ClienteComponent } from './pages/dashboard/clientes/cliente/cliente.component';
+import { GarantiaComponent } from './pages/dashboard/garantias/garantia/garantia.component';
 
 import { TokenInterceptor } from './app.interceptor';
 import es from '@angular/common/locales/es';
@@ -53,7 +54,8 @@ registerLocaleData(es);
     NavComponent,
     GarantiasComponent,
     ClientesComponent,
-    ClienteComponent
+    ClienteComponent,
+    GarantiaComponent
   ],
   imports: [
     BrowserModule,
