@@ -30,9 +30,26 @@ section {
   color: rgba(255, 0, 0, 0.6);
 }
 
-.background-100 {
+.background-auth {
   height: 100vh;
-  background-color: #fafafa;
+  opacity: 0.85;
+}
+
+.background-img {
+  height: 100vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(5px) contrast(50%);
+  position: fixed;
+}
+
+.img-1 {
+  background-image: url("./assets/images/carousel/1.jpg");
+}
+
+.img-4 {
+  background-image: url("./assets/images/carousel/4.jpg");
 }
 
 .mat-card-header-text {

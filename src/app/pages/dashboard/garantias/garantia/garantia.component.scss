@@ -1,0 +1,13 @@
+$width-stand: 220px;
+
+.mat-grid-tile .mat-form-field {
+  max-width: $width-stand;
+}
+
+.mat-grid-tile[colspan="2"] .mat-form-field {
+  max-width: ($width-stand * 2) + 12.5px;
+}
+
+tr.mat-header-row th {
+  font-weight: bold;
+}
