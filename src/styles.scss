@@ -48,6 +48,10 @@ section {
   background-image: url("./assets/images/carousel/1.jpg");
 }
 
+.img-3 {
+  background-image: url("./assets/images/carousel/3.jpg");
+}
+
 .img-4 {
   background-image: url("./assets/images/carousel/4.jpg");
 }
@@ -74,6 +78,11 @@ section {
 .button-recuperar-btn {
   width: 40%;
   margin: auto 5% !important;
+  text-transform: uppercase;
+}
+
+.button-restablecer-btn {
+  width: 50%;
   text-transform: uppercase;
 }
 

@@ -9,10 +9,12 @@ import { UsuariosComponent } from './pages/dashboard/usuarios/usuarios.component
 import { GarantiasComponent } from './pages/dashboard/garantias/garantias.component';
 import { ClientesComponent } from './pages/dashboard/clientes/clientes.component';
 import { GarantiaComponent } from './pages/dashboard/garantias/garantia/garantia.component';
+import { RestablecerComponent } from './pages/auth/restablecer/restablecer.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'recuperar', component: RecuperarComponent },
+  { path: 'restablecer/:id', component: RestablecerComponent },
   {
     path: '',
     component: DashboardComponent,

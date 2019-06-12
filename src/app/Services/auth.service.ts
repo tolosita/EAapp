@@ -24,4 +24,8 @@ export class AuthService {
   recuperarClave(email: string) {
     return this.http.post(`${Constants.API_ENDPOINT}/${Constants.PATH_RECUPERAR}`, email).toPromise();
   }
+
+  restablecerClave(id: number, clave: string) {
+    return this.http.post(`${Constants.API_ENDPOINT}/${Constants.PATH_RESTABLECER}/${id}`, clave).toPromise();
+  }
 }

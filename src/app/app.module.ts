@@ -35,6 +35,7 @@ import { GarantiaComponent } from './pages/dashboard/garantias/garantia/garantia
 import { TokenInterceptor } from './app.interceptor';
 import es from '@angular/common/locales/es';
 import { registerLocaleData } from '@angular/common';
+import { RestablecerComponent } from './pages/auth/restablecer/restablecer.component';
 
 registerLocaleData(es);
 
@@ -55,7 +56,8 @@ registerLocaleData(es);
     GarantiasComponent,
     ClientesComponent,
     ClienteComponent,
-    GarantiaComponent
+    GarantiaComponent,
+    RestablecerComponent
   ],
   imports: [
     BrowserModule,

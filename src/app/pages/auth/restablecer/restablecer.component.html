@@ -1,0 +1,41 @@
+<app-loader [cargando]="cargando"></app-loader>
+<img class="background-img img-3">
+<mat-grid-list cols="1" rowHeight="fit" class="background-auth">
+  <mat-grid-tile>
+    <form [formGroup]="restablecerForm" (ngSubmit)="onSubmit()">
+      <mat-card class="content-form">
+        <mat-card-header>
+          <mat-card-title>
+            Restablecer Cuenta
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-subtitle *ngIf="error" class="error-text">
+          {{ error }}
+        </mat-card-subtitle>
+        <mat-card-content class="content-input">
+          <p>
+            <mat-form-field appearance="outline">
+              <mat-label>Nueva Contraseña</mat-label>
+              <input matInput formControlName="clave" [type]="hide ? 'password' : 'text'">
+              <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              <mat-error *ngIf="clave.invalid">{{getErrorMessage(clave)}}</mat-error>
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field appearance="outline">
+              <mat-label>Repetir Contraseña</mat-label>
+              <input matInput formControlName="reclave" [type]="hide2 ? 'password' : 'text'">
+              <mat-icon matSuffix (click)="hide2 = !hide2">{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+              <mat-error *ngIf="reclave.invalid">{{getErrorMessage(reclave)}}</mat-error>
+            </mat-form-field>
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button routerLink="/login" mat-button class="button-restablecer-btn">Login</button>
+          <button type="submit" mat-flat-button color="accent" class="button-restablecer-btn"
+            [disabled]="cargando">Restablecer</button>
+        </mat-card-actions>
+      </mat-card>
+    </form>
+  </mat-grid-tile>
+</mat-grid-list>
