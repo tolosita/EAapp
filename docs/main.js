@@ -2203,7 +2203,7 @@ var LoaderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar color=\"primary\">\r\n  <button type=\"button\" aria-label=\"Toggle sidenav\" mat-icon-button (click)=\"sidenav.toggle()\"\r\n    *ngIf=\"isHandset$ | async\">\r\n    <mat-icon aria-label=\"Side nav toggle icon\">menu</mat-icon>\r\n  </button>\r\n  <img src=\"../../../../assets/images/logo_ea_group.png\" class=\"logo\">\r\n</mat-toolbar>"
+module.exports = "<mat-toolbar color=\"primary\">\r\n  <button type=\"button\" aria-label=\"Toggle sidenav\" mat-icon-button (click)=\"sidenav.toggle()\"\r\n    *ngIf=\"isHandset$ | async\">\r\n    <mat-icon aria-label=\"Side nav toggle icon\">menu</mat-icon>\r\n  </button>\r\n  <img src=\"assets/images/logo_ea_group.png\" class=\"logo\">\r\n</mat-toolbar>"
 
 /***/ }),
 
