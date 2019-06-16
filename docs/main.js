@@ -510,6 +510,7 @@ var AppModule = /** @class */ (function () {
                 _ngrx_effects__WEBPACK_IMPORTED_MODULE_9__["EffectsModule"].forRoot(_store_app_store__WEBPACK_IMPORTED_MODULE_10__["appEffects"])
             ],
             providers: [
+                { provide: _angular_common__WEBPACK_IMPORTED_MODULE_29__["APP_BASE_HREF"], useValue: '/EAapp' },
                 { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HTTP_INTERCEPTORS"], useClass: _app_interceptor__WEBPACK_IMPORTED_MODULE_27__["TokenInterceptor"], multi: true },
                 { provide: 'LOCALSTORAGE', useFactory: getLocalStorage },
                 { provide: _angular_core__WEBPACK_IMPORTED_MODULE_1__["LOCALE_ID"], useValue: 'es-CO' }
