@@ -1,5 +1,5 @@
 export class Constants {
-    public static API_ENDPOINT = 'http://localhost:8090/EAapp-Back/api';
+    public static API_ENDPOINT = 'https://eaapp.herokuapp.com/EAapp-Back/api';
     public static PATH_USUARIOS = 'usuarios';
     public static PATH_CLIENTES = 'clientes';
     public static PATH_LOGIN = 'login';
